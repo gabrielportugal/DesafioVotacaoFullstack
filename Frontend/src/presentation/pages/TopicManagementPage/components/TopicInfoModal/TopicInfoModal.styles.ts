@@ -8,9 +8,26 @@ export const styles = {
   } as React.CSSProperties,
 
   modalContent: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: theme.spacing.xl,
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+    },
+  } as React.CSSProperties,
+
+  leftColumn: {
     display: 'flex',
     flexDirection: 'column',
     gap: theme.spacing.lg,
+  } as React.CSSProperties,
+
+  rightColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing.lg,
+    paddingLeft: theme.spacing.xl,
+    borderLeft: '1px solid #e0e0e0',
   } as React.CSSProperties,
 
   titleSection: {
@@ -45,7 +62,7 @@ export const styles = {
   } as React.CSSProperties,
 
   sessionsContainer: {
-    maxHeight: '140px',
+    maxHeight: '300px',
     overflowY: 'auto',
     display: 'flex',
     flexDirection: 'column',

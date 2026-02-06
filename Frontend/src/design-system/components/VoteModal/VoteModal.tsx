@@ -29,6 +29,7 @@ export const VoteModal: React.FC<VoteModalProps> = ({
   const [cpf, setCpf] = useState('');
   const [choice, setChoice] = useState<VoteChoice | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cpfError, setCpfError] = useState<string>('');
 
   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -37,6 +38,20 @@ export const VoteModal: React.FC<VoteModalProps> = ({
     const numbers = inputValue.replace(/\D/g, '');
     if (numbers.length <= 11) {
       setCpf(numbers);
+      
+      // Valida CPF ao digitar (somente se tiver 11 dígitos)
+      if (numbers.length === 11) {
+        const validation = validateCpf(numbers);
+        if (!validation.status && validation.message) {
+          setCpfError(validation.message);
+        } else {
+          setCpfError('');
+        }
+      } else if (numbers.length > 0) {
+        setCpfError('CPF incompleto');
+      } else {
+        setCpfError('');
+      }
     }
   };
 
@@ -101,6 +116,7 @@ export const VoteModal: React.FC<VoteModalProps> = ({
     setCpf('');
     setChoice(null);
     setIsSubmitting(false);
+    setCpfError('');
     onClose();
   };
 
@@ -127,7 +143,14 @@ export const VoteModal: React.FC<VoteModalProps> = ({
             onChange={handleCpfChange}
             maxLength={14}
             disabled={isSubmitting}
+            isInvalid={!!cpfError}
+            style={cpfError ? styles.inputError : undefined}
           />
+          {cpfError && (
+            <div style={styles.errorMessage}>
+              {cpfError}
+            </div>
+          )}
         </Form.Group>
 
         <div style={styles.voteContainer}>

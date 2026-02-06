@@ -1,4 +1,4 @@
-# 🗳️ Sistema de Votação - Sicredi
+# 🗳️ Sistema de Votação - Fullstack
 
 ## 📚 Visão Geral
 

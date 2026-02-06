@@ -43,6 +43,18 @@ export const styles = {
     color: theme.colors.text.primary,
   } as React.CSSProperties,
 
+  inputError: {
+    borderColor: '#dc3545',
+    borderWidth: '2px',
+  } as React.CSSProperties,
+
+  errorMessage: {
+    color: '#dc3545',
+    fontSize: '0.875rem',
+    marginTop: theme.spacing.xs,
+    fontWeight: 500,
+  } as React.CSSProperties,
+
   voteContainer: {
     marginBottom: theme.spacing.md,
   } as React.CSSProperties,
