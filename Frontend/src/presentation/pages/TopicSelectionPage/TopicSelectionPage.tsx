@@ -49,13 +49,12 @@ export const TopicSelectionPage: React.FC = () => {
     try {
       const topicData = await topicService.getTopicById(topicId);
       
-      // Verifica se não há sessões de votação ou se tem sessão fechada
-      const hasNoSessions = !topicData.votingSessions || topicData.votingSessions.length === 0;
-      const hasClosedSession = topicData.votingSessions?.some(
-        (session) => session.status === 'CLOSED'
+      // Verifica se há pelo menos uma sessão de votação aberta
+      const hasOpenSession = topicData.votingSessions?.some(
+        (session) => session.status === 'OPEN'
       );
 
-      if (hasNoSessions || hasClosedSession) {
+      if (!hasOpenSession) {
         setModalMessage('Não há sessão de votação aberta para esta pauta.');
         setModalOpen(true);
         return;
