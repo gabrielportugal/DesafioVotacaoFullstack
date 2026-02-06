@@ -144,6 +144,10 @@ A API estará disponível em: `http://localhost:8080`
 # Navegar para o diretório do frontend
 cd Frontend
 
+# Criar o arquivo de variáveis de ambiente
+# Copie o .env.example e renomeie para .env
+cp .env.example .env
+
 # Instalar dependências
 npm install
 
@@ -155,6 +159,9 @@ A aplicação estará disponível em: `http://localhost:5173`
 
 
 ## 🐳 Docker
+
+<img src="./docs/docker.png" alt="Docker" width="80%"/>
+
 ### 🚀 Como usar
 #### Subir toda a aplicação (banco + API + frontend):
 
@@ -184,18 +191,6 @@ As configurações podem ser alteradas no arquivo `docker-compose.yml`:
 - Memória da JVM
 
 > 🔍 Healthchecks: Todos os serviços têm healthchecks configurados para garantir que estejam prontos antes de iniciar serviços dependentes.
----
-
-## 🌱 Versionamento do Projeto
-
-Este projeto adota **Semantic Versioning (SemVer)**:
-
-- **MAJOR**: Mudanças incompatíveis com versões anteriores
-- **MINOR**: Novas funcionalidades compatíveis
-- **PATCH**: Correções de bugs
-
-Formato: `MAJOR.MINOR.PATCH` (ex: `1.2.3`)
-
 ---
 
 ## 🌿 Estratégia de Branches (Git)

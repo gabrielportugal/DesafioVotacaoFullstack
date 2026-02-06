@@ -5,7 +5,7 @@ import type { VoteResult } from '../types/VoteResult';
 export const topicService = {
   async getAllTopics(): Promise<Topic[]> {
     try {
-      const response = await httpClient.get<Topic[]>('/topic');
+      const response = await httpClient.get<Topic[]>('topic');
       return response.data;
     } catch (error) {
       console.error('Erro ao buscar pautas:', error);
@@ -15,7 +15,7 @@ export const topicService = {
 
   async getTopicById(id: number): Promise<TopicWithSessions> {
     try {
-      const response = await httpClient.get<TopicWithSessions>(`/topic/${id}`);
+      const response = await httpClient.get<TopicWithSessions>(`topic/${id}`);
       return response.data;
     } catch (error) {
       console.error(`Erro ao buscar pauta ${id}:`, error);
@@ -25,7 +25,7 @@ export const topicService = {
 
   async createTopic(data: Omit<Topic, 'id' | 'createdAt' | 'updatedAt'>): Promise<Topic> {
     try {
-      const response = await httpClient.post<Topic>('/topic', data);
+      const response = await httpClient.post<Topic>('topic', data);
       return response.data;
     } catch (error) {
       console.error('Erro ao criar pauta:', error);
@@ -35,7 +35,7 @@ export const topicService = {
 
   async deleteTopic(id: number): Promise<void> {
     try {
-      await httpClient.delete(`/topic/${id}`);
+      await httpClient.delete(`topic/${id}`);
     } catch (error) {
       console.error(`Erro ao deletar pauta ${id}:`, error);
       throw error;
@@ -44,7 +44,7 @@ export const topicService = {
 
   async getTopicResult(id: number): Promise<VoteResult> {
     try {
-      const response = await httpClient.get<VoteResult>(`/topic/result/${id}`);
+      const response = await httpClient.get<VoteResult>(`topic/result/${id}`);
       return response.data;
     } catch (error) {
       console.error(`Erro ao buscar resultado da pauta ${id}:`, error);

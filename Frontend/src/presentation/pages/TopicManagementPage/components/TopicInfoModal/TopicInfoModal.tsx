@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Modal as BootstrapModal } from 'react-bootstrap';
 import { theme } from '../../../../../design-system';
-import { Button, Badge } from '../../../../../design-system';
+import { Badge } from '../../../../../design-system';
 import { topicService } from '../../../../../services/topic.service';
 import type { TopicWithSessions } from '../../../../../types/Topic';
 import type { VoteResult } from '../../../../../types/VoteResult';
