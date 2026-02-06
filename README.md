@@ -27,7 +27,7 @@ A aplicação frontend segue os princípios de **Clean Architecture**, separando
 - **Shared Layer**: Utilitários (validação CPF, formatação de datas)
 - **Types**: Interfaces TypeScript para contratos de dados
 
-A aplicação utiliza Vite como bundler e ferramenta de build, escolhido por oferecer startup extremamente rápido, Hot Module Replacement (HMR) eficiente e uma configuração mais simples e moderna, aumentando a produtividade no desenvolvimento e reduzindo o tempo de feedback.
+A aplicação utiliza **Vite** como bundler e ferramenta de build, escolhido por oferecer startup extremamente rápido, Hot Module Replacement (HMR) eficiente e uma configuração mais simples e moderna, aumentando a produtividade no desenvolvimento e reduzindo o tempo de feedback.
 
 **Padrões adotados:**
 - Clean Architecture
