@@ -4,6 +4,8 @@
 
 Sistema full stack para gestão de pautas e votação cooperativista, desenvolvido com **React** no frontend e **Spring Boot** no backend. A aplicação permite a criação de pautas, abertura de sessões de votação com tempo determinado e registro de votos por CPF.
 
+<img src="./docs/fullstack.gif" alt="Fluxo Sistema" width="80%"/>
+
 ### Fluxo Principal
 
 1. **Gestão de Pautas**: Criação, listagem, visualização e exclusão de pautas
@@ -64,6 +66,8 @@ O backend utilizado neste sistema tem como base o projeto DesafioVotacao, dispon
 - Pautas fechadas não podem ser reabertas
 - Pautas podem ser excluídas apenas quando estão **OPEN**
 
+<img src="./docs/novaPauta.png" alt="Criação de nova pauta" width="80%"/>
+
 ### Sessões de Votação
 
 - Sessões de votação têm duração configurável (em minutos)
@@ -71,6 +75,8 @@ O backend utilizado neste sistema tem como base o projeto DesafioVotacao, dispon
 - Sessões expiram automaticamente após o tempo configurado
 - Sessões podem ter status **OPEN** ou **CLOSED**
 - Apenas pautas abertas podem iniciar novas sessões
+
+<img src="./docs/sessaoVotacao.png" alt="Abertua de uma sessão de votação" width="80%"/>
 
 ### Votação
 
@@ -80,6 +86,10 @@ O backend utilizado neste sistema tem como base o projeto DesafioVotacao, dispon
 - Votos só são aceitos em sessões ativas (OPEN)
 - Votos em sessões expiradas são rejeitados
 
+<img src="./docs/votacaoCpfCorreto.png" alt="Votação com CPF correto" width="80%"/>
+
+<img src="./docs/resultadoVotacao.png" alt="Resultado das votações" width="80%"/>
+
 ### Validações
 
 **Frontend:**
@@ -87,6 +97,8 @@ O backend utilizado neste sistema tem como base o projeto DesafioVotacao, dispon
 - Máscaras de entrada (CPF: 999.999.999-99)
 - Validação de campos obrigatórios
 - Limitação de caracteres (título: 100, descrição: 255)
+
+<img src="./docs/votacaoCpfErrado.png" alt="Votação com CPF Errado" width="80%"/>
 
 **Backend:**
 - Validação de CPF duplicado por sessão
